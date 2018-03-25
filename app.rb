@@ -7,10 +7,15 @@ class App < Sinatra::Base
     "#{@user_name}"
   end
 
-  get '/square/:number' do 
-    @num = params[:number].to_i 
-    @product = @num * @num 
+  get '/square/:number' do
+    num = params[:number].to_i
+    @product = num * num
     "#{@product}"
   end 
+
+  get '/say/:number/:phrase' do 
+    @number = params[:number].to_i 
+    @phrase = params[:phrase]
+    
 
 end
