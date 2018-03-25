@@ -31,11 +31,11 @@ class App < Sinatra::Base
     "#{word1 +" "+ word2 +" "+ word3 +" "+ word4 +" "+ word5}"
   end
 
-  get '/:operation/:number1/:number2' do 
+  get '/:operation/:number1/:number2' do
     operate = params[:operation]
     num1 = params[:number1].to_i
     num2 = params[:number2].to_i
-    case operate 
+    case operate
     when "add"
       operate = :+
     when "subtract"
@@ -44,10 +44,10 @@ class App < Sinatra::Base
       operate = :*
     when "divide"
       operate = :/
-    end 
+    end
 
     output = num1.send(operate, num2)
     output.to_s
   end
-    
+
 end
